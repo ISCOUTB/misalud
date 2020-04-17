@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Google3</string>
+    <string name="not_log_in">No se pudo iniciar sesion</string>
+    <string name="log_out">Log Out</string>
+    <string name="revoke">revoke</string>
+    <string name="not_close_session">No se cerro sesion</string>
+    <string name="not_revoke">No se puso revocar el acceso</string>
+</resources>
