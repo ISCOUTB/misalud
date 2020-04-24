@@ -18,6 +18,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Main2Activity extends AppCompatActivity {
 
+    public static String id = "";
+
     private Button mButtonSignOut;
     private TextView mTextviewName;
     private TextView mTextviewEmail;
@@ -58,9 +60,8 @@ public class Main2Activity extends AppCompatActivity {
         getUserInfo();
 
     }
-
     private void getUserInfo(){
-        String id= mAuth.getCurrentUser().getUid();
+        id= mAuth.getCurrentUser().getUid();
         mDatabase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

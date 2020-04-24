@@ -54,16 +54,6 @@
             android:hint="Correo"
             android:textColorHint="#000000" />
 
-        <EditText
-            android:id="@+id/clavetwo"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/botonbordes"
-            android:hint="Confirmar Contraseña"
-            android:textColorHint="#000000" />
-
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="200dp"
