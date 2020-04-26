@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PersionArterial"></activity>
+        <activity android:name=".TempCorporal"></activity>
+        <activity android:name=".Glucemia" />
+        <activity android:name=".FrecuenciaCardiaca" />
+        <activity android:name=".PersionArterial" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".LoginActivity2" />
         <activity android:name=".menuapp" />

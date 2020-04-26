@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,13 +13,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.Calendar;
@@ -35,16 +28,14 @@ public class PersionArterial extends AppCompatActivity {
     private EditText mSIS;
     private EditText mDIA;
     private Button mSaveP;
+    private Button mCancelP;
+    private EditText mPULSE;
     public String name;
-    public String email;
-    public String auxName;
-    public String auxEmail;
-    private TextView mTextviewName;
-    private TextView mTextviewEmail;
+
 
     private String sis;
-    private String dia2;
-    private String correo="";
+    private String dia;
+    private String pulse;
 
     public int ano;
     public int mes;
@@ -62,24 +53,39 @@ public class PersionArterial extends AppCompatActivity {
         Calendar fecha= new GregorianCalendar();
         ano = fecha.get(Calendar.YEAR);
         mes = fecha.get(Calendar.MONTH);
-        int dia = fecha.get(Calendar.DAY_OF_MONTH);
+        int dia2 = fecha.get(Calendar.DAY_OF_MONTH);
 
-        String fecha1=dia+"-"+(mes+1)+"-"+ano;
-        mSIS=(EditText)findViewById(R.id.SIS);
+        String fecha1=dia2+"-"+(mes+1)+"-"+ano;
+        mSIS=(EditText)findViewById(R.id.SYS);
         mDIA=(EditText)findViewById(R.id.DIA);
+        mPULSE=(EditText)findViewById(R.id.PULSE);
         mSaveP=(Button)findViewById(R.id.SavePresion);
+        mCancelP=(Button)findViewById(R.id.CancelPresion);
 
 
         mDatabase= FirebaseDatabase.getInstance();
         dDatabase= mDatabase.getReference("Users/"+id+"/PresionArterial "+fecha1);
 
+        mCancelP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PersionArterial.this, menuapp.class));
+            }
+        });
 
         mSaveP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sis=mSIS.getText().toString();
-                dia2=mDIA.getText().toString();
-                SaveData();
+                dia=mDIA.getText().toString();
+                pulse=mPULSE.getText().toString();
+
+                if(!sis.isEmpty() && !dia.isEmpty() && !pulse.isEmpty()){
+                    SaveData();
+                }else{
+                    Toast.makeText(PersionArterial.this, "Debe Completar Los campos", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -90,7 +96,7 @@ public class PersionArterial extends AppCompatActivity {
 public void SaveData(){
         Map<String, Object>map=new HashMap<>();
         map.put("SIS",sis);
-        map.put("DIA",dia2);
+        map.put("DIA",dia);
 
         dDatabase.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
