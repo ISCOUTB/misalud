@@ -26,11 +26,21 @@ public class Main2Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     public Button avanzar;
+    private Button setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        setting =(Button)findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p=new Intent(getApplicationContext(),Setting.class);
+                startActivity(p);
+            }
+        });
 
         avanzar = (Button) findViewById(R.id.control2);
         avanzar.setOnClickListener(new View.OnClickListener() {

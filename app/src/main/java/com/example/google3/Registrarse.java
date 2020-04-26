@@ -91,7 +91,7 @@ public class Registrarse extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
-                                startActivity(new Intent(Registrarse.this, Rgistrofisico.class));
+                                startActivity(new Intent(Registrarse.this, LoginActivity.class));
                                 finish();
                             }else{
                                 Toast.makeText(Registrarse.this, "No se pudo crear los datos", Toast.LENGTH_SHORT).show();
