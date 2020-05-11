@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "113984326327",
-    "firebase_url": "https://project-5471470161137930776.firebaseio.com",
-    "project_id": "project-5471470161137930776",
-    "storage_bucket": "project-5471470161137930776.appspot.com"
+    "project_number": "194986881684",
+    "firebase_url": "https://health-8d8cf.firebaseio.com",
+    "project_id": "health-8d8cf",
+    "storage_bucket": "health-8d8cf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:113984326327:android:c9aabeb9ff8424b8041b32",
+        "mobilesdk_app_id": "1:194986881684:android:ab4035b33b0f9f85a9ba81",
         "android_client_info": {
-          "package_name": "com.privado.google3"
+          "package_name": "com.prospect.health"
         }
       },
       "oauth_client": [
         {
-          "client_id": "113984326327-9itr99hpte2r7uru65b88eqs23n17a9i.apps.googleusercontent.com",
+          "client_id": "194986881684-sds23enn4mb1g9t264dmvtsb51r3sd6n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.privado.google3",
-            "certificate_hash": "152146c25b35bb70f30949d8f067f919454f1632"
+            "package_name": "com.prospect.health",
+            "certificate_hash": "a425ec16a6b1cd61ce39eee4af6dc1451f12a0e3"
           }
         },
         {
-          "client_id": "113984326327-at3tq4g3hs22v8tq0e2ac1hfquag6kao.apps.googleusercontent.com",
+          "client_id": "194986881684-nk7a3f307kr7shbqgpnhrqpn4d0tehc9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCdEAz56z91ijqgUI7XYHFPVL8zby6TfMo"
+          "current_key": "AIzaSyBKpBgALUVgX1C6FyatWWkx9TBwinyRGmA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "113984326327-at3tq4g3hs22v8tq0e2ac1hfquag6kao.apps.googleusercontent.com",
+              "client_id": "194986881684-nk7a3f307kr7shbqgpnhrqpn4d0tehc9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
