@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -21,11 +22,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +37,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private EditText mEditTextRate;
     private EditText mEditTextPresure;
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity{
     private FirebaseAuth mAuth;
 
     //Variables
-    private SignInButton signInButton;
     public static String rate="";
     public static String presure="";
     public static String saturation="";
@@ -60,6 +58,7 @@ public class MainActivity extends AppCompatActivity{
     public static String sugar="";
     private GoogleApiClient googleApiClient;
     public static String date1;
+    public static String dato="00";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,20 +91,35 @@ public class MainActivity extends AppCompatActivity{
 
         mButtonAnalyze.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                rate = mEditTextRate.getText().toString();
-                presure = mEditTextPresure.getText().toString();
-                saturation = mEditTextSaturation.getText().toString();
-                temperature = mEditTextTemperature.getText().toString();
-                sugar = mEditTextSugar.getText().toString();
 
+            public void onClick(View view){
+
+                rate = ( mEditTextRate.getText() != null)?mEditTextRate.getText().toString():dato;
+                presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): "0";
+                saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():"0";
+                temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():"0";
+                sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():"0";
                 saveData();
+                //mButtonAnalyze.setBackgroundColor(Color.RED);
             }
         });
 
+        mAuth = FirebaseAuth.getInstance();
+
+        GoogleSignInOptions gso= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .build();
 
 
+    }
 
+    private void notifi(){
+        Toast.makeText(MainActivity.this, "Por favor llene todos los campos", Toast.LENGTH_SHORT).show();
     }
 
     //Almacenar datos
@@ -162,5 +176,44 @@ public class MainActivity extends AppCompatActivity{
         startActivity(proAlarm);
     }
 
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+        if(opr.isDone()){
+            GoogleSignInResult result = opr.get();
+            handleSignInResult(result);
+        }else{
+            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                @Override
+                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
+                    handleSignInResult(googleSignInResult);
+                }
+            });
+        }
+    }
+
+    private void handleSignInResult(GoogleSignInResult result) {
+        if(result.isSuccess()){
+            GoogleSignInAccount account = result.getSignInAccount();
+
+
+
+
+        }else{
+            goLogInScreen();
+        }
+    }
+
+    private void goLogInScreen() {
+        Intent intent = new Intent(this,Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }

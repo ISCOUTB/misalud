@@ -36,7 +36,6 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private EditText mEditTextEmail;
     private EditText mEditTextPassword;
     private Button mButtonLogin;
-    private Button register;
 
     public static FirebaseAuth Logintrue;
 
@@ -61,7 +60,6 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         mEditTextEmail = (EditText) findViewById(R.id.editEmail);
         mEditTextPassword = (EditText) findViewById(R.id.editPass);
         mButtonLogin = (Button) findViewById(R.id.buttonSingup);
-        register=(Button) findViewById(R.id.buttonSingin);
 
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,10 +123,6 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         startActivity(intent);
     }
 
-
-
-
-
     public static String id ="";
     private void loginUser(){
 
@@ -159,9 +153,9 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
    }*/
 
     //Results Screen
-   public void Registro(View v) {
-        Intent Register = new Intent(this, TerminosCondiciones.class);
-        startActivity(Register);
+    public void Registro(View v) {
+        Intent Registro = new Intent(this, Registre.class);
+        startActivity(Registro);
     }
 
 

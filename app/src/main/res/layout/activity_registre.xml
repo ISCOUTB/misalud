@@ -98,6 +98,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <CheckBox
+                    android:id="@+id/aceptar_terminos_y_condiciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="term"
+                    android:text="@string/aceptar_terminos_y_condiciones"
+                    tools:ignore="LabelFor" />
 
             </LinearLayout>
 

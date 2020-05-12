@@ -220,8 +220,6 @@
                 android:onClick="proAlarm"
                 android:text="@string/my_medicine"
                 android:textColor="@android:color/white" />
-
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

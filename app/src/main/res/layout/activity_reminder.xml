@@ -1,118 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/ic_login"
-    tools:context=".Reminder">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_login"
+        tools:context=".Reminder">
 
-        <ImageView
-            android:id="@+id/imageLogo"
-            android:layout_width="189dp"
-            android:layout_height="143dp"
-            android:layout_marginTop="4dp"
-            android:contentDescription="@string/todo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.522"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher1" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="338dp"
-            android:layout_height="228dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.532">
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="282dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center|fill_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="306dp"
+                android:layout_height="285dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+
+                <TextView
+                    android:id="@+id/notifications_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center|center_vertical"
+                    android:hint="00:00"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonL"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="L" />
+
+                    <Button
+                        android:id="@+id/buttonM"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="M" />
+
+                    <Button
+                        android:id="@+id/buttonX"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="X" />
+
+                    <Button
+                        android:id="@+id/buttonJ"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="J" />
+
+                    <Button
+                        android:id="@+id/buttonV"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="V" />
+
+                    <Button
+                        android:id="@+id/buttonS"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="S" />
+
+                    <Button
+                        android:id="@+id/buttonD"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="#FFFFFF"
+                        android:text="D" />
+
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dip" />
+
+                <EditText
+                    android:id="@+id/editMedicamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:gravity="center|center_vertical"
+                    android:hint="@string/name_medicien"
+                    android:inputType="text"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="o" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dip" />
+
+                <Button
+                    android:id="@+id/buttonMasAlarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bk_boton_mas"
+                    android:onClick="MasAlarm"
+                    android:text="@string/buttonMas"
+                    android:textSize="36sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="324dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="28dp"
+                android:gravity="center|center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!--android:backgroundTint="#77D353"-->
+
+
+                <Space
+                    android:layout_width="12dip"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/buttonRetumm"
+                    android:onClick="return0"
+                    android:text="Return"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bk_boton_plano1"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/textView10"
+                android:layout_width="282dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/time_selected_is"
-                android:textSize="30sp" />
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/name_regis_alarm"
+                android:textAlignment="center"
+                android:textIsSelectable="true"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="67dp"
+                tools:layout_editor_absoluteY="27dp"
+                tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/notifications_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center_horizontal"
-                android:textSize="30sp"
-                tools:text="12:00" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <Button
-                android:id="@+id/change_notification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center_horizontal"
-                android:text="@string/change_time"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="216dp"
-            android:layout_height="120dp"
-            android:layout_marginBottom="32dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <Button
-                android:id="@+id/buttonMas"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/bk_boton_mas"
-                android:text="@string/buttonMas"
-                android:textColor="@android:color/white"
-                android:textSize="40sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
-            <Button
-                android:id="@+id/buttonReturn"
-                android:layout_width="160dp"
-                android:layout_height="38dp"
-                android:background="@drawable/bk_boton_plano1"
-                android:baselineAligned="false"
-                android:onClick="returnn"
-                android:text="@string/return0"
-                android:textColor="@android:color/white" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="126dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center|center_vertical"
-            android:text="@string/alarm"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>

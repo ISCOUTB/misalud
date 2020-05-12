@@ -7,18 +7,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 public class TerminosCondiciones extends AppCompatActivity {
-
-    private Button done;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         setContentView(R.layout.activity_terminos_condiciones);
     }
 
@@ -50,10 +44,4 @@ public class TerminosCondiciones extends AppCompatActivity {
         Intent returnn = new Intent(this, Registre.class);
         startActivity(returnn);
     }
-
-    public void DOONE(View v) {
-        Intent Register = new Intent(this, Registre.class);
-        startActivity(Register);
-    }
-
 }
