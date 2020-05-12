@@ -3,6 +3,7 @@ package com.prospect.health;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -62,6 +63,8 @@ public class Reminder extends AppCompatActivity {
 
     private EditText mEditMmedicamento;
     private String medicamento;
+    private String day;
+    private boolean save;
 
 
     boolean id;
@@ -78,26 +81,7 @@ public class Reminder extends AppCompatActivity {
         setContentView(R.layout.activity_reminder);
 
         mEditMmedicamento = (EditText) findViewById(R.id.editMedicamento);
-        medicamento = (mEditMmedicamento.getText() != null)? mEditMmedicamento.getText().toString(): "hola";
         database = FirebaseDatabase.getInstance();
-        mDatabase = database.getReference("Usuario/"+id+"/Alarma/"+medicamento);
-
-        mButtonL = (Button) findViewById(R.id.buttonL);
-        ButonDias(mButtonL, id);
-        Log.d("myTag", "hola1"+id+"j");
-        mButtonM = (Button) findViewById(R.id.buttonM);
-        ButonDias(mButtonM, id1);
-        Log.d("myTag", "hola2"+id1+"j");
-        mButtonX = (Button) findViewById(R.id.buttonX);
-        ButonDias(mButtonX, id2);
-        mButtonJ = (Button) findViewById(R.id.buttonJ);
-        ButonDias(mButtonJ, id3);
-        mButtonV = (Button) findViewById(R.id.buttonV);
-        ButonDias(mButtonV, id4);
-        mButtonS = (Button) findViewById(R.id.buttonS);
-        ButonDias(mButtonS, id5);
-        mButtonD = (Button) findViewById(R.id.buttonD);
-        ButonDias(mButtonD, id6);
 
 
         settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
@@ -176,63 +160,57 @@ public class Reminder extends AppCompatActivity {
             }
         });
 
-       /* btDate=(Button)findViewById(R.id.buttonDate);
-        btTime=(Button)findViewById(R.id.buttonTime);
-        buttonMas=(Button)findViewById(R.id.buttonMas);
-        edDate=(EditText)findViewById(R.id.editDate);
-        edTime=(EditText)findViewById(R.id.editTime);
-        editName=(EditText)findViewById(R.id.editNameMedicine);
-        btDate.setOnClickListener(this);
-        btTime.setOnClickListener(this);
-        buttonMas.setOnClickListener(this);*/
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pressed(view);
+            }
+        };
+        mButtonL = (Button) findViewById(R.id.buttonL);
+        mButtonM = (Button) findViewById(R.id.buttonM);
+        mButtonX = (Button) findViewById(R.id.buttonX);
+        mButtonJ = (Button) findViewById(R.id.buttonJ);
+        mButtonV = (Button) findViewById(R.id.buttonV);
+        mButtonS = (Button) findViewById(R.id.buttonS);
+        mButtonD = (Button) findViewById(R.id.buttonD);
+        mButtonL.findViewById(R.id.buttonL).setOnClickListener(onClickListener);
+        mButtonM.findViewById(R.id.buttonM).setOnClickListener(onClickListener);
+        mButtonX.findViewById(R.id.buttonX).setOnClickListener(onClickListener);
+        mButtonJ.findViewById(R.id.buttonJ).setOnClickListener(onClickListener);
+        mButtonV.findViewById(R.id.buttonV).setOnClickListener(onClickListener);
+        mButtonS.findViewById(R.id.buttonS).setOnClickListener(onClickListener);
+        mButtonD.findViewById(R.id.buttonD).setOnClickListener(onClickListener);
     }
+
 
     public void MasAlarm(View view) {
         List<Integer> day = new ArrayList<Integer>();
 
-        day.add(000);
-        day.add(111);
-        day.add(0011);
-
         Log.d("myTag", "hola"+id+id1+id3+"j");
-        /*if (id) {
-            day.add(0);
-        }
-        if (id1) {
-            day.add(1);
-        }
-        if (id2) {
-            day.add(2);
-        }
-        if (id3) {
-            day.add(3);
-        }
-        if (id4) {
-            day.add(4);
-        }
-        if (id5) {
-            day.add(5);
-        }
-        if (id6) {
-            day.add(6);
-        }*/
+        if (id) {day.add(0);}
+        if (id1) {day.add(1);}
+        if (id2) {day.add(2);}
+        if (id3) {day.add(3);}
+        if (id4) {day.add(4);}
+        if (id5) {day.add(5);}
+        if (id6) {day.add(6);}
 
-         Toast.makeText(Reminder.this, "Holaa mundo", Toast.LENGTH_LONG).show();
         /*if (selectedHour1 < 10) finalHour = "0" + selectedHour1;
         if (selectedMinute1 < 10) finalMinute = "0" + selectedMinute1;
         notificationsTime.setText(finalHour + ":" + finalMinute);*/
-        Map<String, Object> map = new HashMap<>();
-        Log.d("myTag", "Afuera");
-        String data = "hola "+ day.size() +" hola";
-        Log.d("myTag", data);
-        for (int i = 0; i < day.size(); i++){
-            Log.d("myTag", "Inicio uno");
-            Toast.makeText(Reminder.this, "hola"+i, Toast.LENGTH_LONG).show();
-            Calendar today = Calendar.getInstance();
+        medicamento = (mEditMmedicamento.getText() != null)? mEditMmedicamento.getText().toString(): "hola";
 
-            map.put( "Day", day.get(i));
-            map.put("Hour", selectedHour1);
-            map.put( "Minute ", selectedMinute1);
+        Map<String, Object> map = new HashMap<>();
+        for (int i = 0; i < day.size(); i++){
+            Calendar today = Calendar.getInstance();
+            if(day.get(i)==0){map.put( "Lunes", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==1){map.put( "Martes", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==2){map.put( "Miercoles", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==3){map.put( "Jueves", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==4){map.put( "Viernes", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==5){map.put( "Sabado", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+            if(day.get(i)==6){map.put( "Domingo", day.get(i));map.put("Hour", selectedHour1);map.put( "Minute", selectedMinute1);}
+
 
         today.set(Calendar.DAY_OF_WEEK, day.get(i));
         today.set(Calendar.HOUR_OF_DAY, selectedHour1);
@@ -251,17 +229,17 @@ public class Reminder extends AppCompatActivity {
         timeAlarm = today.getTimeInMillis();
 
         edit.commit();
-
-        Toast.makeText(Reminder.this, finalMinute+" "+selectedHour1 , Toast.LENGTH_LONG).show();
-
         Utils.setAlarm(alarmID, today.getTimeInMillis(), Reminder.this);
-
-
+        mDatabase = database.getReference("Usuario/"+id+"/Alarma/"+medicamento+"/"+day.get(i));
+        saveData(map);
+        map.clear();
     }
-        saveData(map); 
-        /*id=false; id1=false; id2=false; id3=false; id4=false; id5=false; id6=false;
-        ButonDias(mButtonL, id);ButonDias(mButtonM, id1);ButonDias(mButtonX, id2);ButonDias(mButtonJ, id3);
-        ButonDias(mButtonV, id4);ButonDias(mButtonS, id5);ButonDias(mButtonD, id6);*/
+        if(save){Toast.makeText( Reminder.this, "Alarma guardada!", Toast.LENGTH_SHORT).show();}
+        save=false;
+        Toast.makeText(Reminder.this, selectedHour1+" "+selectedMinute1 , Toast.LENGTH_LONG).show();
+        id=false; id1=false; id2=false; id3=false; id4=false; id5=false; id6=false;
+        ButonColor(mButtonL);ButonColor(mButtonM);ButonColor(mButtonX);ButonColor(mButtonJ);ButonColor(mButtonV);
+        ButonColor(mButtonS);ButonColor(mButtonD);
         mEditMmedicamento.setText("");
     }
 
@@ -333,26 +311,6 @@ public class Reminder extends AppCompatActivity {
         }
     }
 
-    public void ButonDias(final Button Dia, final boolean id111){
-        Dia.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                hola(Dia, id111);
-            }});
-        Log.d( "mytag", " hola global "+id111 );
-    }
-
-    public void hola(Button Dia, boolean id111){
-        if(!id111){
-            Dia.setBackgroundColor(Color.parseColor("#7BC85D"));
-            id111=true;
-            Log.d( "mytag", " hola globalIF "+id111 );
-        }else if(id111){
-            Dia.setBackgroundColor(Color.parseColor("#FFFFFF"));
-            id111=false;
-            Log.d( "mytag", " hola globalELSE "+id111 );
-        }
-    }
     //Almacenar datos
     private void saveData(Map map){
 
@@ -361,32 +319,51 @@ public class Reminder extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task2) {
                 if(task2.isSuccessful()){
                     // Log.d("myTag", "Su registro ha sido exitoso");
-                    Toast.makeText( Reminder.this, "Alarma guardada!", Toast.LENGTH_SHORT).show();
-
-                    finish();
+                    save=true;
                 }
             }
         });
     }
-        public void return0(View v){
+    public void return0(View v){
             Intent return0 = new Intent(this, MainActivity.class);
             startActivity(return0);
         }
 
-   /* //debe redireccional al pantallazo principal que sera el layout
-    //con estadistica de progreso de el usuario e informacion basica de el
-    public void continuee(View v){
-        Intent returnn = new Intent(this, MainActivity.class);
-        startActivity(returnn);
+    //Saber que boton se eligio
+    private void pressed(View view){
+        switch(view.getId()){
+            case R.id.buttonL:
+                id=ButonDias(mButtonL,id);
+                break;
+            case R.id.buttonM:
+                id1=ButonDias(mButtonM,id1);
+                break;
+            case R.id.buttonX:
+                id2=ButonDias(mButtonX,id2);
+                break;
+            case R.id.buttonJ:
+                id3=ButonDias(mButtonJ,id3);
+                break;
+            case R.id.buttonV:
+                id4=ButonDias(mButtonV,id4);
+                break;
+            case R.id.buttonS:
+                id5=ButonDias(mButtonS,id5);
+                break;
+            case R.id.buttonD:
+                id6=ButonDias(mButtonD,id6);
+                break;
+            default:
+                break;
+        }
     }
-
-    public static void setAlarm(int i, long timestamp, Context ctx){
-        AlarmManager alarmManager = (AlarmManager) ctx.getSystemService(ALARM_SERVICE);
-        Intent alarmIntent = new Intent(ctx, AlarmReceiver.class);
-        PendingIntent pendingIntent;
-        pendingIntent = PendingIntent.getBroadcast(ctx, i, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
-        alarmIntent.setData((Uri.parse("custom://" + System.currentTimeMillis())));
-        alarmManager.set(AlarmManager.RTC_WAKEUP, timestamp, pendingIntent);
+    public boolean ButonDias(Button Dia, boolean id){
+        if(!id){id=true; Dia.setBackgroundColor(Color.parseColor("#7BC85D"));
+        }else{id=false; Dia.setBackgroundColor(Color.parseColor("#FFFFFF"));}
+        Log.d("myTag", "antes "+id+"j");
+        return id;
     }
-    */
+    public void ButonColor(Button Dia){
+        Dia.setBackgroundColor(Color.parseColor("#FFFFFF"));
+    }
 }

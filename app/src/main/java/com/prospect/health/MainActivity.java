@@ -95,10 +95,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             public void onClick(View view){
 
                 rate = ( mEditTextRate.getText() != null)?mEditTextRate.getText().toString():dato;
-                presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): "0";
-                saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():"0";
-                temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():"0";
-                sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():"0";
+                presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): dato;
+                saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():dato;
+                temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():dato;
+                sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():dato;
                 saveData();
                 //mButtonAnalyze.setBackgroundColor(Color.RED);
             }
