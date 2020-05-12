@@ -34,7 +34,6 @@
 
     <string name="hora">Time</string>
     <string name="fecha">Date</string>
-    <string name="buttonMas">+</string>
     <string name="alarm">Alarm</string>
     <string name="b_r">B.p:</string>
     <string name="h_r">H_R:</string>
@@ -55,5 +54,12 @@
     <string name="Your_new_password">Ingrese su nueva contraseña</string>
     <string name="repit_yourpassword">Ingrese nuevamente</string>
     <string name="button_remember">Recuperar contraseña</string>
-    <string name="log_out" />
+
+
+
+    //alarm
+    <string name="name_regis_alarm">registre su medicina</string>
+    <string name="hora_select">Selecione la hora:</string>
+    <string name="name_medicien">Ingrese el nombre de su medicina</string>
+    <string name="buttonMas">+</string>
 </resources>
