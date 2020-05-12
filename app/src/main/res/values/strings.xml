@@ -62,4 +62,6 @@
     <string name="hora_select">Selecione la hora:</string>
     <string name="name_medicien">Ingrese el nombre de su medicina</string>
     <string name="buttonMas">+</string>
+    <string name="login">Login</string>
+    <string name="aceptar">aceptar</string>
 </resources>

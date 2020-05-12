@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Health/app" />
       <module fileurl="file://$PROJECT_DIR$/misalud-Health.iml" filepath="$PROJECT_DIR$/misalud-Health.iml" group="Health" />
       <module fileurl="file://$PROJECT_DIR$/app/misalud-app.iml" filepath="$PROJECT_DIR$/app/misalud-app.iml" group="Health/app" />
+      <module fileurl="file://$PROJECT_DIR$/misalud2-Health.iml" filepath="$PROJECT_DIR$/misalud2-Health.iml" group="Health" />
+      <module fileurl="file://$PROJECT_DIR$/app/misalud2-app.iml" filepath="$PROJECT_DIR$/app/misalud2-app.iml" group="Health/app" />
     </modules>
   </component>
 </project>

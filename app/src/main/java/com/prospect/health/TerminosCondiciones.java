@@ -41,6 +41,11 @@ public class TerminosCondiciones extends AppCompatActivity {
     }
 
     public void returnn(View v){
+        Intent returnn = new Intent(this, Login.class);
+        startActivity(returnn);
+    }
+
+    public void acept(View v){
         Intent returnn = new Intent(this, Registre.class);
         startActivity(returnn);
     }
