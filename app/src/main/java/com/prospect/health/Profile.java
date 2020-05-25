@@ -1,16 +1,15 @@
 package com.prospect.health;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -18,9 +17,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.util.JsonMapper;
-
-import java.io.File;
 
 
 public class Profile extends AppCompatActivity {
@@ -33,6 +29,11 @@ public class Profile extends AppCompatActivity {
     public static String id = "";
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+
+    public static String name1;
+    public static String email;
+    public static String height;
+    public static String weight;
 
 
     @Override
@@ -58,11 +59,11 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String name = dataSnapshot.child("name").getValue().toString();
-                    String email = dataSnapshot.child("correo").getValue().toString();
-                    String height = dataSnapshot.child("height").getValue().toString();
-                    String weight = dataSnapshot.child("weight").getValue().toString();
-                    mTextViewName.setText(name);
+                    name1 = dataSnapshot.child("name").getValue().toString();
+                    email = dataSnapshot.child("email").getValue().toString();
+                    height = dataSnapshot.child("height").getValue().toString();
+                    weight = dataSnapshot.child("weight").getValue().toString();
+                    mTextViewName.setText(name1);
                     mTextViewEmail.setText(email);
                     mTextViewHeight.setText(height);
                     mTextViewWeight.setText(weight);
@@ -88,13 +89,8 @@ public class Profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()){
-                    json=dataSnapshot.child(datosVitales).getValue().toString();
-                    //DatosVitales objeto = JsonReader.new file (json.toString());
-                    Log.d("mytag"," "+dataSnapshot.child(datosVitales).getValue().toString());
-                    String date=dataSnapshot.child(datosVitales).getValue().toString();
-
-                    mTextDate.setText(date);
-
+                    String date=dataSnapshot.child(datosVitales+"/24-5-2020").getKey();
+                    Log.d("mytag"," "+date);
                 }
             }
 

@@ -3,6 +3,8 @@ package com.prospect.health;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -31,16 +33,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private EditText mEditTextRate;
     private EditText mEditTextPresure;
+    private EditText mEditTextPresure1;
     private EditText mEditTextSaturation;
     private EditText mEditTextTemperature;
     private EditText mEditTextSugar;
@@ -53,12 +59,21 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     //Variables
     public static String rate="";
     public static String presure="";
+    public static String presure1="";
     public static String saturation="";
     public static String temperature="";
     public static String sugar="";
     private GoogleApiClient googleApiClient;
     public static String date1;
-    public static String dato="00";
+    public static String dato=null;
+
+
+    boolean cancel = false;
+    List<String> ask = new ArrayList<String>(Arrays.asList("¿Ha hecho ejercicio los ultimos 10 minutos?",
+            "¿Sufre de alguna enfermedad cardiaca o de azucar?","¿Se desperto hace 10 minutos?",
+            "¿Ha desayunado?", "¿ha comido hace dos horas o mas?"));
+    public static List<Integer> askint = new ArrayList<>();
+    int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         mEditTextRate = (EditText) findViewById(R.id.editRate);
         mEditTextPresure = (EditText) findViewById(R.id.editPressure);
+        mEditTextPresure1 = (EditText) findViewById(R.id.editPressure1);
         mEditTextSaturation = (EditText) findViewById(R.id.editSaturation);
         mEditTextTemperature = (EditText) findViewById(R.id.editTemperature);
         mEditTextSugar = (EditText) findViewById(R.id.editSugar);
@@ -88,35 +104,66 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference("Usuario/"+id+"/datosVitales/"+date1);
-
+        boolean tem=false;
         mButtonAnalyze.setOnClickListener(new View.OnClickListener(){
             @Override
 
             public void onClick(View view){
-
-                rate = ( mEditTextRate.getText() != null)?mEditTextRate.getText().toString():dato;
-                presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): dato;
-                saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():dato;
-                temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():dato;
-                sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():dato;
-                saveData();
-                //mButtonAnalyze.setBackgroundColor(Color.RED);
+                if(cancel){cancel=false;}
+                ModalAsk(ask.get(i));
             }
         });
-
-
-
+    }
+    private void ModalAsk(final String dato){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.Theme_AppCompat_DayNight_Dialog);
+        builder.setTitle("Preguntas");
+        builder.setMessage(dato)
+                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        askint.add(1);
+                        terminar();
+                        ModalAsk(ask.get(i));
+                    }
+                })
+                .setNeutralButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        askint.add(0);
+                        terminar();
+                        ModalAsk(ask.get(i));
+                    }
+                });
+        if(!cancel){
+            builder.show();
+            i++;
+        }
     }
 
-    private void notifi(){
-        Toast.makeText(MainActivity.this, "Por favor llene todos los campos", Toast.LENGTH_SHORT).show();
+    private void terminar(){
+        if(i==5){
+            cancel = true;
+            i=0;
+            proceso();
+        }
+    }
+    private void proceso(){
+        rate = ( mEditTextRate.getText() != null)?mEditTextRate.getText().toString():dato;
+        presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): dato;
+        presure1 = ( mEditTextPresure1.getText() != null)? mEditTextPresure1.getText().toString(): dato;
+        saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():dato;
+        temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():dato;
+        sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():dato;
+        saveData();
+        //mButtonAnalyze.setBackgroundColor(Color.RED);
     }
 
     //Almacenar datos
     private void saveData(){
         Map<String, Object> map = new HashMap<>();
         map.put( "Heart Rate", rate);
-        map.put("Blood Presure", presure);
+        map.put("Blood Presure Sistólica", presure);
+        map.put("Blood Presure Diastólica ", presure1);
         map.put( "Oxigen Saturation", saturation);
         map.put( "Temperature", temperature);
         map.put( "Sugar", sugar);

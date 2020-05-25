@@ -4,7 +4,9 @@
     <string name="todo"></string>
     <string name="enter_the_following_information"><![CDATA[Enter the following information  ]]></string>
     <string name="heart_rate">Heart Rate:</string>
-    <string name="blood_pressure">Blood Presure:</string>
+    <string name="blood_pressure">Blood Presure SYS:</string>
+    <string name="blood_pressure1">Blood Presure DIA:</string>
+    <string name="blood_pressure2">Blood Presure:</string>
     <string name="oxigen_saturation">Oxigen Saturation:</string>
     <string name="temperature">Temperature:</string>
     <string name="sugar">Sugar:</string>
@@ -64,4 +66,7 @@
     <string name="buttonMas">+</string>
     <string name="login">Login</string>
     <string name="aceptar">aceptar</string>
+
+    <string name="si">Sí</string>
+    <string name="no">No</string>
 </resources>

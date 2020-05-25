@@ -61,8 +61,8 @@
             android:contentDescription="@string/todo" />
 
         <LinearLayout
-            android:layout_width="292dp"
-            android:layout_height="261dp"
+            android:layout_width="290dp"
+            android:layout_height="288dp"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
@@ -92,6 +92,15 @@
                     android:drawableLeft="@mipmap/blood"
                     android:gravity="start|center"
                     android:text="@string/blood_pressure" />
+
+                <TextView
+                    android:id="@+id/textPressure2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableStart="@mipmap/blood"
+                    android:drawableLeft="@mipmap/blood"
+                    android:gravity="start|center"
+                    android:text="@string/blood_pressure1" />
 
                 <TextView
                     android:id="@+id/textSaturaciontion"
@@ -149,6 +158,17 @@
                     tools:targetApi="o" />
 
                 <EditText
+                    android:id="@+id/editPressure1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:gravity="center|center_vertical"
+                    android:inputType="number"
+                    tools:ignore="LabelFor"
+                    tools:targetApi="o" />
+
+                <EditText
                     android:id="@+id/editSaturation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -187,13 +207,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:layout_width="324dp"
-            android:layout_height="55dp"
-            android:layout_marginBottom="28dp"
+            android:layout_width="408dp"
+            android:layout_height="64dp"
             android:gravity="center|center_vertical"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.321"
             app:layout_constraintStart_toStartOf="parent">
 
             <!--android:backgroundTint="#77D353"-->
@@ -204,7 +224,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano"
-                android:onClick="results"
                 android:text="@string/analyze"
                 android:textColor="@android:color/white" />
 

@@ -40,7 +40,7 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/blood"
                     android:gravity="center_vertical"
-                    android:text="@string/blood_pressure"
+                    android:text="@string/blood_pressure2"
                     android:textSize="18sp" />
 
                 <TextView

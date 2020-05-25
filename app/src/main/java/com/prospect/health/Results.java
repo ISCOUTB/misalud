@@ -71,72 +71,123 @@ public class Results extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference("Usuario/"+id+"/datosVitales/"+date2+"/Resultados");
-
-       /* mButtonReturn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-
-
-            }
-        });*/
-
         if(estado){
             saveData();
         }
-
-
-
     }
 
     //calcular y mostrar resultados
-    public void Result(){
+    public void Result() {
 
         //Rate
-        int rate1 = Integer.parseInt(MainActivity.rate);
-        int presure1= Integer.parseInt(MainActivity.presure);
-        int saturation1= Integer.parseInt(MainActivity.saturation);
-        int temperature1= Integer.parseInt(MainActivity.temperature);
-        int sugar1= Integer.parseInt(MainActivity.sugar);
+        int rate1 = (MainActivity.rate != null) ? Integer.parseInt(MainActivity.rate) : 0;
+        int presure1 = (MainActivity.presure != null) ? Integer.parseInt(MainActivity.presure) : 0;
+        int presure11 = (MainActivity.presure1 != null) ? Integer.parseInt(MainActivity.presure1) : 0;
+        int saturation1 = (MainActivity.saturation != null) ? Integer.parseInt(MainActivity.saturation) : 0;
+        float temperature1 = Integer.parseInt(MainActivity.temperature);
+        int sugar1 = (MainActivity.sugar != null) ? Integer.parseInt(MainActivity.sugar) : 0;
 
-        if(rate1<=100 && rate1>=60 ){
-            rate = "Normal";
-        }else if(rate1<60 || rate1>100){
-            rate= "Necesario ir al medico";
-        }
-
-        if(presure1<= 120){
-            presure ="Normal";
-        }else if(presure1> 120 && presure1 >=129){
-            presure ="Alta";
-        }else if(presure1> 130 && presure1 >=139){
-            presure ="Hipertensión etapa 1";
-        }else if(presure1>= 140){
-            presure ="Hipertensión etapa 2";
+        //Frecuencia cardiaca-------------------------------//----------------------------------//
+        if(rate1==0) {
+            rate = "No ingreso dato";
+        }else if(MainActivity.askint.get(0)==1){
+            if(rate1<=200 && rate1>=80){
+                rate = "Normal";
+            }
+        }else if(MainActivity.askint.get(2)==1){
+            if(rate1<=100 && rate1>=50){
+                rate = "Normal";
+            }
         }else{
-            presure="Necesario ir al medico";
+            if(rate1<=100 && rate1>=60 ){
+                rate = "Normal";
+            }else if((rate1<=60 && rate1>=1 || rate1>=100)){
+                rate= "Necesario ir al medico";
+            }
         }
+        //-------------------------------//----------------------------------//
 
+        //Presion Arterial -------------------------------//----------------------------------//
+        if(presure1<= 90){
+            if(presure11<=60){
+                presure ="Hipotensión";
+            }
+        }else if(presure1>=91 && presure1<=119){
+            if(presure11>=61 && presure11<=79){
+                presure = "Normal";
+            }
+        }else if(presure1<=129 && presure1>=120){
+            if(presure11<=80){
+                presure = "Elevada";
+            }
+        }else if(presure1<=139 && presure1>=130){
+            if(presure11<=89 && presure11>=80){
+                presure = "Etapa 1 de hipertensión";
+            }
+        }else if(presure1>=140){
+            if(presure11>=90){
+                presure = "Etapa 2 de hipertensión";
+            }
+        }else if(presure1>=180){
+            if(presure11>=120){
+                presure = "Hipertensiva";
+            }
+        }
+        if(presure1==0 || presure11 == 0) {
+            presure = "No ingreso dato";
+        }
+        //-------------------------------//----------------------------------//
+
+        //Saturacion-------------------------------//----------------------------------//
         if(saturation1>=95 && saturation1<=100){
             saturation="Normal";
-        }else if(saturation1<90){
-            saturation="Hipoxemia";
+        }else if(saturation1>=91 && saturation1<=94){
+            saturation="Hipoxia leve";
+        }else if(saturation1>=86 && saturation1<=90){
+            saturation="Hipoxia moderada";
+        }else if(saturation1<86){
+            saturation="Hipoxia severa";
+        }else if(saturation1==0) {
+            saturation = "No ingreso dato";
         }else{
-            saturation="Necesario ir al medico";
+            saturation="Fuera de rango";
         }
 
-        if(temperature1>=36 && temperature1<=37){
+        //-------------------------------//----------------------------------//
+
+        //Temperatura-------------------------------//----------------------------------//
+        if(temperature1>=35 && temperature1<=37){
             temperature="Normal";
-        }else if(temperature1>38){
-            temperature="Necesario ir al medico";
-        }else{
+        }else if(temperature1>=37.1 && temperature1<=37.9){
+            temperature="estado febril o febrícula";
+        }else if(temperature1>=38 && temperature1<40){
+            temperature="hipertermia o fiebre";
+        }
+        else{
             temperature="Necesario ir al medico";
         }
+        if(saturation1==0) {
+            saturation = "No ingreso dato";
+        }
+        //-------------------------------//----------------------------------//
 
-        if(sugar1>=70 && sugar1<=100){
+        //Azucar en la sangre-------------------------------//----------------------------------//
+        if(MainActivity.askint.get(3)==1) {
+            if (rate1 <= 100 && rate1 >= 70) {
+                sugar = "Normal";
+            }
+        }else if(MainActivity.askint.get(4)==1) {
+            if (rate1 <= 140 && rate1 >= 70) {
+                sugar = "Normal";
+            }
+        }else if(sugar1>=70 && sugar1<=100){
             sugar="Normal";
+        }else if(saturation1==0) {
+            saturation = "No ingreso dato";
         }else{
-            sugar="Necesario ir al medico";
+            sugar="Fuera de rango";
         }
+        //-------------------------------//----------------------------------//
 
         mTextRate.setText(rate);
         mTextPresure.setText(presure);
