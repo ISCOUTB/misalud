@@ -2,12 +2,11 @@ package com.prospect.health;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.SparseIntArray;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -79,13 +76,12 @@ public class Results extends AppCompatActivity {
     //calcular y mostrar resultados
     public void Result() {
 
-        //Rate
-        int rate1 = (MainActivity.rate != null) ? Integer.parseInt(MainActivity.rate) : 0;
-        int presure1 = (MainActivity.presure != null) ? Integer.parseInt(MainActivity.presure) : 0;
-        int presure11 = (MainActivity.presure1 != null) ? Integer.parseInt(MainActivity.presure1) : 0;
-        int saturation1 = (MainActivity.saturation != null) ? Integer.parseInt(MainActivity.saturation) : 0;
-        float temperature1 = Integer.parseInt(MainActivity.temperature);
-        int sugar1 = (MainActivity.sugar != null) ? Integer.parseInt(MainActivity.sugar) : 0;
+        int rate1 = (!TextUtils.isEmpty(MainActivity.rate)) ? Integer.parseInt(MainActivity.rate) : 0;
+        int presure1 = (!TextUtils.isEmpty(MainActivity.presure)) ? Integer.parseInt(MainActivity.presure) : 0;
+        int presure11 = (!TextUtils.isEmpty(MainActivity.presure1)) ? Integer.parseInt(MainActivity.presure1) : 0;
+        int saturation1 = (!TextUtils.isEmpty(MainActivity.saturation)) ? Integer.parseInt(MainActivity.saturation) : 0;
+        float temperature1 = (!TextUtils.isEmpty(MainActivity.temperature))? Integer.parseInt(MainActivity.temperature):0;
+        int sugar1 = (!TextUtils.isEmpty(MainActivity.sugar)) ? Integer.parseInt(MainActivity.sugar) : 0;
 
         //Frecuencia cardiaca-------------------------------//----------------------------------//
         if(rate1==0) {
@@ -104,7 +100,7 @@ public class Results extends AppCompatActivity {
             }else if((rate1<=60 && rate1>=1 || rate1>=100)){
                 rate= "Necesario ir al medico";
             }
-        }
+        }rate = (!TextUtils.isEmpty(rate)) ? rate : "fuera de rango";
         //-------------------------------//----------------------------------//
 
         //Presion Arterial -------------------------------//----------------------------------//
@@ -132,10 +128,9 @@ public class Results extends AppCompatActivity {
             if(presure11>=120){
                 presure = "Hipertensiva";
             }
-        }
-        if(presure1==0 || presure11 == 0) {
+        }else if(presure1==0 || presure11 == 0) {
             presure = "No ingreso dato";
-        }
+        }presure = (!TextUtils.isEmpty(presure)) ? presure : "fuera de rango";
         //-------------------------------//----------------------------------//
 
         //Saturacion-------------------------------//----------------------------------//
@@ -149,9 +144,7 @@ public class Results extends AppCompatActivity {
             saturation="Hipoxia severa";
         }else if(saturation1==0) {
             saturation = "No ingreso dato";
-        }else{
-            saturation="Fuera de rango";
-        }
+        }saturation = (!TextUtils.isEmpty(saturation)) ? saturation : "fuera de rango";
 
         //-------------------------------//----------------------------------//
 
@@ -167,8 +160,8 @@ public class Results extends AppCompatActivity {
             temperature="Necesario ir al medico";
         }
         if(saturation1==0) {
-            saturation = "No ingreso dato";
-        }
+            temperature = "No ingreso dato";
+        }temperature = (!TextUtils.isEmpty(temperature)) ? temperature : "fuera de rango";
         //-------------------------------//----------------------------------//
 
         //Azucar en la sangre-------------------------------//----------------------------------//
@@ -186,7 +179,7 @@ public class Results extends AppCompatActivity {
             saturation = "No ingreso dato";
         }else{
             sugar="Fuera de rango";
-        }
+        }sugar = (!TextUtils.isEmpty(sugar)) ? sugar : "fuera de rango";
         //-------------------------------//----------------------------------//
 
         mTextRate.setText(rate);
@@ -198,6 +191,16 @@ public class Results extends AppCompatActivity {
         estado=true;
     }
 
+    public boolean isNumeric(String cadena) {
+        boolean resultado;
+        try {
+            Integer.parseInt(cadena);
+            resultado = true;
+        } catch (NumberFormatException excepcion) {
+            resultado = false;
+        }
+        return resultado;
+    }
 
     private void saveData(){
         Map<String, Object> map = new HashMap<>();

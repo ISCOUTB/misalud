@@ -1,32 +1,22 @@
 package com.prospect.health;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
@@ -148,12 +137,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }
     }
     private void proceso(){
-        rate = ( mEditTextRate.getText() != null)?mEditTextRate.getText().toString():dato;
-        presure = ( mEditTextPresure.getText() != null)? mEditTextPresure.getText().toString(): dato;
-        presure1 = ( mEditTextPresure1.getText() != null)? mEditTextPresure1.getText().toString(): dato;
-        saturation = ( mEditTextSaturation.getText() != null)? mEditTextSaturation.getText().toString():dato;
-        temperature = ( mEditTextTemperature.getText() != null)? mEditTextTemperature.getText().toString():dato;
-        sugar = ( mEditTextSugar.getText() != null)? mEditTextSugar.getText().toString():dato;
+        rate = mEditTextRate.getText().toString();
+        presure = mEditTextPresure.getText().toString();
+        presure1 = mEditTextPresure1.getText().toString();
+        saturation = mEditTextSaturation.getText().toString();
+        temperature = mEditTextTemperature.getText().toString();
+        sugar = mEditTextSugar.getText().toString();
         saveData();
         //mButtonAnalyze.setBackgroundColor(Color.RED);
     }
@@ -161,10 +150,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     //Almacenar datos
     private void saveData(){
         Map<String, Object> map = new HashMap<>();
-        map.put( "Heart Rate", rate);
-        map.put("Blood Presure Sistólica", presure);
-        map.put("Blood Presure Diastólica ", presure1);
-        map.put( "Oxigen Saturation", saturation);
+        map.put( "Heart_Rate", rate);
+        map.put("Blood_Presure_Sistólica", presure);
+        map.put("Blood_Presure_Diastólica ", presure1);
+        map.put( "Oxigen_Saturation", saturation);
         map.put( "Temperature", temperature);
         map.put( "Sugar", sugar);
 

@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +42,7 @@ public class Registre extends AppCompatActivity {
 
     //Variables
     private String name="";
-    private String correo="";
+    private String email="";
     private String surnames="";
     private String weight="";
     private String height="";
@@ -72,7 +70,7 @@ public class Registre extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 name = mEdiTextName.getText().toString();
-                correo = mEditTextCorreo.getText().toString();
+                email = mEditTextCorreo.getText().toString();
                 //surnames = mEdiTextSurnames.getText().toString();
                 weight = mEdiTextWeight.getText().toString();
                 height = mEditTextHeight.getText().toString();
@@ -88,13 +86,13 @@ public class Registre extends AppCompatActivity {
     }
 
     private void registerUser(){
-        mAuth.createUserWithEmailAndPassword(correo, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Map<String, Object> map = new HashMap<>();
                     map.put( "name", name);
-                    map.put("correo", correo);
+                    map.put("email", email);
                     map.put( "password", password);
                     //map.put( "surnames", surnames);
                     map.put( "weight", weight);
