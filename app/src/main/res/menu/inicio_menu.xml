@@ -17,6 +17,6 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_salir"
-        android:title="Salir"
-        app:showAsAction="never"/>
+        android:title="Sign out"
+        app:showAsAction="never" />
 </menu>

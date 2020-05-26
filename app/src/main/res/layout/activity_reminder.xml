@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:shadowColor="#FFFFFF"
-                        android:text="X" />
+                        android:text="MI" />
 
                     <Button
                         android:id="@+id/buttonJ"
@@ -121,7 +121,7 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:gravity="center|center_vertical"
-                    android:hint="@string/name_medicien"
+                    android:hint="enter the name of your medicine"
                     android:inputType="text"
                     tools:ignore="LabelFor"
                     tools:targetApi="o" />
@@ -174,13 +174,13 @@
                 android:layout_width="282dp"
                 android:layout_height="wrap_content"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="@string/name_regis_alarm"
+                android:text="record your medications "
                 android:textAlignment="center"
                 android:textIsSelectable="true"
                 android:textSize="24sp"
+                tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="67dp"
-                tools:layout_editor_absoluteY="27dp"
-                tools:ignore="MissingConstraints" />
+                tools:layout_editor_absoluteY="27dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
