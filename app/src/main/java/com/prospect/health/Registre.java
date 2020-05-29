@@ -78,14 +78,14 @@ public class Registre extends AppCompatActivity {
                 password = mEdiTextPassword.getText().toString();
                 /*name = "Prueba1";
                 mDatabase.child("Usuario").setValue(name);*/
-
-                registerUser();
             }
         });
 
     }
 
+
     private void registerUser(){
+
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

@@ -9,9 +9,7 @@
     <list default="true" id="1192681e-495b-49bc-aa79-e4a598b25f63" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/Registre.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/Registre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/prospect/health/Results.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +20,6 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ZY322N3LD8" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
