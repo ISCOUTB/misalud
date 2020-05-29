@@ -1,23 +1,16 @@
 package com.prospect.health;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -27,9 +20,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -70,7 +60,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                 if (!email.isEmpty()&&!password.isEmpty()){
                     loginUser();
                 }else{
-                    Toast.makeText(Login.this, "Completa los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "complete the field", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -97,9 +87,9 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                     id= mAuth.getCurrentUser().getUid();
                     Log.d("hola id", id);
                     startActivity(new Intent(Login.this,MainActivity.class));
-                    Toast.makeText(Login.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Welcome", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Login.this, "No se pudo iniciar sesion", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Could not log in", Toast.LENGTH_SHORT).show();
                 }
             }
         });

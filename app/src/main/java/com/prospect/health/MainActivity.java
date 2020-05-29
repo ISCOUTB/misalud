@@ -58,9 +58,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     boolean cancel = false;
-    List<String> ask = new ArrayList<String>(Arrays.asList("¿Ha hecho ejercicio los ultimos 10 minutos?",
-            "¿Sufre de alguna enfermedad cardiaca o de azucar?","¿Se desperto hace 10 minutos?",
-            "¿Ha desayunado?", "¿ha comido hace dos horas o mas?"));
+    List<String> ask = new ArrayList<String>(Arrays.asList("Have you exercised the last 10 minutes?","Do you suffer from heart disease or sugar?","Did you wake up 10 minutes ago?","Have you had breakfast?","Have you eaten two hours or more?"));
     public static List<Integer> askint = new ArrayList<>();
     int i=0;
 
@@ -98,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
 
             public void onClick(View view){
+
                 if(cancel){cancel=false;}
                 ModalAsk(ask.get(i));
             }
@@ -105,9 +104,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
     private void ModalAsk(final String dato){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.Theme_AppCompat_DayNight_Dialog);
-        builder.setTitle("Preguntas");
+        builder.setTitle("Questions");
         builder.setMessage(dato)
-                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         askint.add(1);
@@ -143,7 +142,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         saturation = mEditTextSaturation.getText().toString();
         temperature = mEditTextTemperature.getText().toString();
         sugar = mEditTextSugar.getText().toString();
-        saveData();
+        if(!rate.isEmpty() && !presure.isEmpty() && !presure1.isEmpty() && !saturation.isEmpty() && !temperature.isEmpty() && !sugar.isEmpty()){
+            saveData();
+        }else{
+            Toast.makeText( MainActivity.this, "complete the field", Toast.LENGTH_SHORT).show();
+        }
+
         //mButtonAnalyze.setBackgroundColor(Color.RED);
     }
 
@@ -163,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 if(task2.isSuccessful()){
                     startActivity(new Intent(MainActivity.this, Results.class ));
                    // Log.d("myTag", "Su registro ha sido exitoso");
-                    Toast.makeText( MainActivity.this, "Analizando datos!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this, "analyzing data!", Toast.LENGTH_SHORT).show();
 
                     finish();
                 }
