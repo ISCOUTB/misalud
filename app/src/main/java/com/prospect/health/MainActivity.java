@@ -142,11 +142,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         saturation = mEditTextSaturation.getText().toString();
         temperature = mEditTextTemperature.getText().toString();
         sugar = mEditTextSugar.getText().toString();
-        if(!rate.isEmpty() && !presure.isEmpty() && !presure1.isEmpty() && !saturation.isEmpty() && !temperature.isEmpty() && !sugar.isEmpty()){
-            saveData();
-        }else{
-            Toast.makeText( MainActivity.this, "complete the field", Toast.LENGTH_SHORT).show();
-        }
+        saveData();
+
 
         //mButtonAnalyze.setBackgroundColor(Color.RED);
     }

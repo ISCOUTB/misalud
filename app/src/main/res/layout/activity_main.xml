@@ -231,14 +231,14 @@
                 android:layout_width="12dip"
                 android:layout_height="wrap_content" />
 
-            <Button
+           <!-- <Button
                 android:id="@+id/buttonMedicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano1"
                 android:onClick="proAlarm"
                 android:text="@string/my_medicine"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white" /> -->
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
