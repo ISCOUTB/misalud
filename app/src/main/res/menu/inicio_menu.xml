@@ -7,10 +7,10 @@
         android:icon="@mipmap/ic_launcher1"
         app:showAsAction="always"/>
 
-    <item
+    <!-- <item
         android:id="@+id/action_setting"
         android:title="Setting"
-        app:showAsAction="never"/>
+        app:showAsAction="never"/> -->
     <item
         android:id="@+id/action_profile"
         android:title="Profile"

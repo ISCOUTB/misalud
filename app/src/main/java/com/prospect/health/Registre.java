@@ -3,8 +3,6 @@ package com.prospect.health;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,14 +76,24 @@ public class Registre extends AppCompatActivity {
                 password = mEdiTextPassword.getText().toString();
                 /*name = "Prueba1";
                 mDatabase.child("Usuario").setValue(name);*/
+
+                if(!name.isEmpty() && !email.isEmpty() && !password.isEmpty()){
+                    if(password.length()>=6){
+                        registerUser();
+                    }else{
+                        Toast.makeText(Registre.this, "Password must have at least 6 characters", Toast.LENGTH_SHORT).show();
+                    }
+                    registerUser();
+                }else{
+                    Toast.makeText(Registre.this, "Must Complete Fields", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
     }
 
-
     private void registerUser(){
-
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -104,15 +112,15 @@ public class Registre extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
-                                startActivity(new Intent(Registre.this, MainActivity.class ));
+                                startActivity(new Intent(Registre.this, Login.class ));
                                 registrotrue=true;
                                 Idtrue= mAuth.getCurrentUser().getUid();
                                 Log.d("myTag", "Su registro ha sido exitoso");
-                                Toast.makeText( Registre.this, "Su registro ha sido exitoso", Toast.LENGTH_SHORT).show();
+                                Toast.makeText( Registre.this, "your registration has been successful", Toast.LENGTH_SHORT).show();
                                 finish();
                             }else{
                                 Log.d("myTag", "EL rgistro fallo");
-                                Toast.makeText( Registre.this, "EL registro fallo", Toast.LENGTH_SHORT).show();
+                                Toast.makeText( Registre.this, "the record failed", Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -120,7 +128,7 @@ public class Registre extends AppCompatActivity {
 
 
                 }else{
-                    Toast.makeText( Registre.this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( Registre.this, "could not register", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -129,36 +137,12 @@ public class Registre extends AppCompatActivity {
 
 
     //Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.inicio_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.action_profile:
-                startActivity(new Intent(Registre.this, Profile.class ));
-                return true;
-            case R.id.action_salir:
-                Login.Logintrue.signOut();
-                startActivity(new Intent(Registre.this, Login.class ));
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
     //Results Screen
     /*public void return0(View v) {
         Intent return0 = new Intent(this, MainActivity.class);
         startActivity(return0);
     }*/
     //Results Screen
-    public void term(View v) {
-        Intent term = new Intent(this, TerminosCondiciones.class);
-        startActivity(term);
-    }
+
 }

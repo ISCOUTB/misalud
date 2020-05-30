@@ -99,10 +99,7 @@
                 android:layout_height="10dp" />
 
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/signInButton"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"></com.google.android.gms.common.SignInButton>
+
 
 
 
