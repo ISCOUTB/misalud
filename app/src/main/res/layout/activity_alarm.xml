@@ -43,8 +43,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/name_of_the_medicine"
-                android:textSize="24sp" />
+                android:text="Nombre de la medicina"
+                android:fontFamily="sans-serif-black"
+                android:textSize="26sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -55,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="86dp"
                 android:gravity="center|center_vertical"
-                android:text="time to take the medicine "
+                android:text="Hora de tomar la medicina."
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -81,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano1"
                 android:onClick="returnn"
-                android:text="@string/return0" />
+                android:text="regresar"
+                android:fontFamily="sans-serif-black" />
 
             <Space
                 android:layout_width="match_parent"

@@ -25,24 +25,25 @@
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="282dp"
-                android:layout_height="wrap_content"
-                android:onClick="Pro"
+                android:layout_height="46dp"
+                android:fontFamily="@font/emmasophia"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="@string/watch_your_health"
+                android:text="Watch your health"
                 android:textAlignment="center"
                 android:textIsSelectable="true"
-                android:textSize="24sp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="224dp"
+            android:layout_width="230dp"
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
-            android:text="@string/enter_the_following_information"
-            android:textIsSelectable="true"
-            android:textSize="18sp"
+            android:fontFamily="sans-serif-black"
             android:gravity="center_horizontal"
+            android:text="Enter the following information"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -81,8 +82,14 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/heart"
                     android:drawableLeft="@mipmap/heart"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
                     android:gravity="start|center"
-                    android:text="@string/heart_rate" />
+                    android:text="Heart rate" />
+
+                <Space
+                    android:layout_width="12dip"
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/textPressure"
@@ -90,8 +97,15 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/blood"
                     android:drawableLeft="@mipmap/blood"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
                     android:gravity="start|center"
-                    android:text="@string/blood_pressure" />
+                    android:text="Blood pressure SYS" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content" />
+
 
                 <TextView
                     android:id="@+id/textPressure2"
@@ -99,8 +113,10 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/blood"
                     android:drawableLeft="@mipmap/blood"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
                     android:gravity="start|center"
-                    android:text="@string/blood_pressure1" />
+                    android:text="Blood pressure  DIA" />
 
                 <TextView
                     android:id="@+id/textSaturaciontion"
@@ -108,8 +124,10 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/oxigen"
                     android:drawableLeft="@mipmap/oxigen"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
                     android:gravity="start|center"
-                    android:text="@string/oxigen_saturation" />
+                    android:text="Oxygen saturation" />
 
                 <TextView
                     android:id="@+id/textTemperature"
@@ -117,8 +135,10 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/temperature"
                     android:drawableLeft="@mipmap/temperature"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="20sp"
                     android:gravity="start|center"
-                    android:text="@string/temperature" />
+                    android:text="Body temperature" />
 
                 <TextView
                     android:id="@+id/textSugar"
@@ -126,8 +146,10 @@
                     android:layout_height="45dp"
                     android:drawableStart="@mipmap/sugar"
                     android:drawableLeft="@mipmap/sugar"
+                    android:fontFamily="sans-serif-black"
                     android:gravity="start|center"
-                    android:text="@string/sugar" />
+                    android:textSize="20sp"
+                    android:text="Glucose" />
             </LinearLayout>
 
             <LinearLayout
@@ -221,10 +243,11 @@
 
             <Button
                 android:id="@+id/buttonAnalyze"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano"
-                android:text="@string/analyze"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Save analysis"
                 android:textColor="@android:color/white" />
 
             <Space

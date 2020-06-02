@@ -69,6 +69,9 @@ public class Profile extends AppCompatActivity {
                     mTextViewWeight.setText(weight);
                 }
             }
+
+
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

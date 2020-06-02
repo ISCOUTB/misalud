@@ -31,7 +31,8 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/heart"
                     android:gravity="center_vertical"
-                    android:text="@string/heart_rate"
+                    android:text="Ritmo Cardiaco:"
+                    android:fontFamily="sans-serif-black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -40,7 +41,8 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/blood"
                     android:gravity="center_vertical"
-                    android:text="@string/blood_pressure2"
+                    android:text="Presión arterial SYS:"
+                    android:fontFamily="sans-serif-black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -49,7 +51,8 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/oxigen"
                     android:gravity="center_vertical"
-                    android:text="@string/oxigen_saturation"
+                    android:text="Saturacón de oxígeno:"
+                    android:fontFamily="sans-serif-black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -58,7 +61,8 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/temperature"
                     android:gravity="center_vertical"
-                    android:text="@string/temperature"
+                    android:text="Tempratura corporal:"
+                    android:fontFamily="sans-serif-black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -67,7 +71,8 @@
                     android:layout_height="60dp"
                     android:drawableLeft="@mipmap/sugar"
                     android:gravity="center_vertical"
-                    android:text="@string/sugar"
+                    android:text="Glicemía:"
+                    android:fontFamily="sans-serif-black"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -117,12 +122,14 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="224dp"
+            android:layout_width="250dp"
             android:layout_height="48dp"
             android:gravity="center_vertical"
-            android:text="Results Report"
+            android:text="Informe de resultados"
+            android:fontFamily="@font/emmasophia"
+            android:textAlignment="center"
             android:textIsSelectable="true"
-            android:textSize="18dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +151,8 @@
             android:layout_height="48dp"
             android:background="@drawable/bk_boton_plano"
             android:onClick="return0"
-            android:text="Return"
+            android:text="Guardar analisis"
+            android:fontFamily="sans-serif-condensed-medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

@@ -6,16 +6,13 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1192681e-495b-49bc-aa79-e4a598b25f63" name="Default Changelist" comment="" />
+    <list default="true" id="05371d1f-2871-49d8-a207-6f287a6d648a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="123af5ae" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Galaxy_Nexus_API_22" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -24,54 +21,23 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="layoutResourceFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="1bjCZfhytNNQYXHv6WNSDydtCCq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1ceLXCK31exrfKHxO60hJbvJZPO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_26" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-25T00:46:54.241Z" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\57302\Desktop\misalud2\app\src\main\res\drawable-xhdpi" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="com.prospect.health" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\57302\Desktop\moviles-devsb\app\src\main\res\drawable-mdpi" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Android App.misaludTP-app">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -130,253 +96,24 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="misalud-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="misalud-app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="misalud-master-app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="misalud-master-app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="misalud2-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="misalud2-app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="misaludTP-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="misaludTP-app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1192681e-495b-49bc-aa79-e4a598b25f63" name="Default Changelist" comment="" />
-      <created>1589136172730</created>
+      <changelist id="05371d1f-2871-49d8-a207-6f287a6d648a" name="Default Changelist" comment="" />
+      <created>1590884149987</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589136172730</updated>
+      <updated>1590884149987</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="351" key="GridCell.Tab.0.bottom" timestamp="1590798188961">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591129165414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="351" key="GridCell.Tab.0.bottom/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1590798188961" />
-    <state width="1323" height="351" key="GridCell.Tab.0.center" timestamp="1590798188960">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="351" key="GridCell.Tab.0.center/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1590798188960" />
-    <state width="1323" height="351" key="GridCell.Tab.0.left" timestamp="1590798188960">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="351" key="GridCell.Tab.0.left/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1590798188960" />
-    <state width="1323" height="351" key="GridCell.Tab.0.right" timestamp="1590798188961">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="351" key="GridCell.Tab.0.right/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1590798188961" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/-1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1591129165414" />
   </component>
 </project>

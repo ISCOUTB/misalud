@@ -94,7 +94,7 @@ public class Reminder extends AppCompatActivity {
         Calendar date = new GregorianCalendar();
         int hour1 = date.get(Calendar.HOUR_OF_DAY);
         int minute1 = date.get(Calendar.MINUTE);
-        date1 = hour1+":"+minute1;
+        date1 = hour+"-"+minute1;
         notificationsTime.setText(date1);
 
         if(hour.length() > 0)
@@ -197,7 +197,7 @@ public class Reminder extends AppCompatActivity {
         /*if (selectedHour1 < 10) finalHour = "0" + selectedHour1;
         if (selectedMinute1 < 10) finalMinute = "0" + selectedMinute1;
         notificationsTime.setText(finalHour + ":" + finalMinute);*/
-        medicamento = (mEditMmedicamento.getText() != null)? mEditMmedicamento.getText().toString(): "No ingreso nombre";
+        medicamento = (mEditMmedicamento.getText() != null)? mEditMmedicamento.getText().toString(): "hola";
 
         Map<String, Object> map = new HashMap<>();
         for (int i = 0; i < day.size(); i++){

@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public static String date1;
     public static String dato=null;
 
-    public static String id;
 
     boolean cancel = false;
     List<String> ask = new ArrayList<String>(Arrays.asList("Have you exercised the last 10 minutes?","Do you suffer from heart disease or sugar?","Did you wake up 10 minutes ago?","Have you had breakfast?","Have you eaten two hours or more?"));
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         Log.d("fecha", date1);
 
-
+        String id;
         if( Registre.registrotrue){
             id= Registre.Idtrue;
         }else{
@@ -144,6 +143,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         temperature = mEditTextTemperature.getText().toString();
         sugar = mEditTextSugar.getText().toString();
         saveData();
+
+
         //mButtonAnalyze.setBackgroundColor(Color.RED);
     }
 

@@ -121,7 +121,7 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:gravity="center|center_vertical"
-                    android:hint="enter the name of your medicine"
+                    android:hint="Ingrese nombre de su medicamento"
                     android:inputType="text"
                     tools:ignore="LabelFor"
                     tools:targetApi="o" />
@@ -162,11 +162,12 @@
                 <Button
                     android:id="@+id/buttonRetumm"
                     android:onClick="return0"
-                    android:text="Return"
+                    android:text="Regresar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bk_boton_plano1"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif-condensed-medium"/>
             </LinearLayout>
 
             <TextView
@@ -174,10 +175,11 @@
                 android:layout_width="282dp"
                 android:layout_height="wrap_content"
                 android:gravity="center|center_horizontal|center_vertical"
-                android:text="record your medications "
+                android:text="Recordatorio de medicinas "
+                android:fontFamily="@font/emmasophia"
                 android:textAlignment="center"
                 android:textIsSelectable="true"
-                android:textSize="24sp"
+                android:textSize="13sp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="67dp"
                 tools:layout_editor_absoluteY="27dp" />

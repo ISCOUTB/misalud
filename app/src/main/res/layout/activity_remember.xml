@@ -14,16 +14,16 @@
             android:id="@+id/imageLogo"
             android:layout_width="189dp"
             android:layout_height="143dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher1"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@mipmap/ic_launcher1" />
 
         <LinearLayout
-            android:layout_width="290dp"
-            android:layout_height="352dp"
+            android:layout_width="341dp"
+            android:layout_height="363dp"
             android:gravity="center|top"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,12 +40,12 @@
                 android:drawableStart="@drawable/ic_action_name"
                 android:drawableLeft="@drawable/ic_action_name"
                 android:ems="10"
-                android:hint="Enter your email"
+                android:hint="Email"
                 android:inputType="textEmailAddress" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <EditText
                 android:id="@+id/editPassRemember"
@@ -55,7 +55,7 @@
                 android:drawableStart="@drawable/ic_action_name1"
                 android:drawableLeft="@drawable/ic_action_name1"
                 android:ems="10"
-                android:hint="Enter your new passsword"
+                android:hint="New Password"
                 android:inputType="textPassword" />
 
             <Space
@@ -70,19 +70,20 @@
                 android:drawableStart="@drawable/ic_action_name1"
                 android:drawableLeft="@drawable/ic_action_name1"
                 android:ems="10"
-                android:hint="Enter again the password"
+                android:hint="New Password Again"
                 android:inputType="textPassword" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
 
             <Button
                 android:id="@+id/buttonRemeber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano"
-                android:text="recover password" />
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Accept" />
 
         </LinearLayout>
 

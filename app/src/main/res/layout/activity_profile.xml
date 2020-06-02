@@ -33,7 +33,8 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre" />
+            android:fontFamily="sans-serif-black"
+            android:text="Name:" />
 
         <TextView
             android:id="@+id/textView4"
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
                 android:text="Weight:" />
 
             <TextView
@@ -63,7 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Heigth" />
+                android:fontFamily="sans-serif-black"
+                android:text="Height:" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -76,7 +79,8 @@
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo" />
+            android:fontFamily="sans-serif-black"
+            android:text="Email:" />
 
         <TextView
             android:id="@+id/textView7"
@@ -101,10 +105,11 @@
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:background="@drawable/bk_boton_plano1"
             android:onClick="return0"
-            android:text="@string/return0" />
+            android:text="Regresar"
+            android:fontFamily="sans-serif-condensed-medium"/>
 
         <Space
             android:layout_width="10dp"

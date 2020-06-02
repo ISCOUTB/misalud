@@ -38,11 +38,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/enter_your_email"
+                android:drawableStart="@drawable/ic_action_name"
                 android:drawableLeft="@drawable/ic_action_name"
-                android:inputType="textEmailAddress"
-                android:drawableStart="@drawable/ic_action_name" />
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
 
             <Space
                 android:layout_width="match_parent"
@@ -53,11 +53,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/enter_your_pass"
+                android:drawableStart="@drawable/ic_action_name1"
                 android:drawableLeft="@drawable/ic_action_name1"
-                android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_action_name1" />
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
 
             <Space
                 android:layout_width="match_parent"
@@ -68,7 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano"
-                android:text="@string/login" />
+                android:text="Login"
+                android:fontFamily="sans-serif-condensed-medium" />
 
             <Space
                 android:layout_width="match_parent"
@@ -80,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano1"
                 android:onClick="forgetPassword"
-                android:text="@string/forget_password" />
+                android:text="Forget password"
+                android:fontFamily="sans-serif-condensed-medium"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -92,16 +94,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bk_boton_plano1"
                 android:onClick="Registro"
-                android:text="Register" />
+                android:text="Register"
+                android:fontFamily="sans-serif-condensed-medium" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-
-
-
-
-
 
 
         </LinearLayout>

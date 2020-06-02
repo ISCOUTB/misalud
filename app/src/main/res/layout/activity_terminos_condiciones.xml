@@ -16,7 +16,8 @@
         android:layout_marginBottom="17dp"
         android:background="@drawable/bk_boton_plano1"
         android:onClick="returnn"
-        android:text="@string/return0"
+        android:text="return"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -29,7 +30,8 @@
         android:layout_marginBottom="17dp"
         android:background="@drawable/bk_boton_plano1"
         android:onClick="acept"
-        android:text="accept"
+        android:text="Accept"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
